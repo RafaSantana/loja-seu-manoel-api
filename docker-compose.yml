@@ -9,6 +9,7 @@ services:
       - db
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
       - ConnectionStrings__DefaultConnection=Server=db;Database=LojaSeuManoel;User=sa;Password=LojaSeuManoel_123;TrustServerCertificate=True
 
   db:
