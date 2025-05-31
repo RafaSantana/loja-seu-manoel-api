@@ -124,4 +124,4 @@ INSERT INTO Caixas (Nome, Altura, Largura, Comprimento) VALUES
 ---
 
 ## Autor
-Desafio técnico realizado por <Rafael Santana> para a vaga .NET Junior.
+Desafio técnico realizado por Rafael Santana para a vaga .NET Junior.
