@@ -25,21 +25,11 @@ API para automatizar o empacotamento de pedidos da Loja do Seu Manoel. Recebe um
    ```
    Isso irá subir a API e o banco SQL Server. As migrations são aplicadas automaticamente ao iniciar a API.
 
+   > **Importante:** As caixas padrão são cadastradas automaticamente no banco ao iniciar a aplicação. Não é necessário inserir manualmente.
+
 3. **Acesse o Swagger:**
    - Abra o navegador em: [http://localhost:5000/swagger](http://localhost:5000/swagger)
    - Você verá a documentação e poderá testar os endpoints.
-
----
-
-## Cadastro das caixas padrão
-Antes de testar o endpoint de empacotamento, cadastre as caixas padrão no banco. Use um cliente SQL (Azure Data Studio, DBeaver, etc) conectado ao container do banco e execute:
-
-```sql
-INSERT INTO Caixas (Nome, Altura, Largura, Comprimento) VALUES
-('Caixa 1', 30, 40, 80),
-('Caixa 2', 80, 50, 40),
-('Caixa 3', 50, 80, 60);
-```
 
 ---
 
@@ -105,8 +95,8 @@ INSERT INTO Caixas (Nome, Altura, Largura, Comprimento) VALUES
 
 ## Observações
 - O endpoint aceita múltiplos pedidos por requisição.
-- As caixas devem ser cadastradas manualmente no banco antes do primeiro uso.
-- O empacotamento é feito de forma simples: cada produto é colocado na menor caixa possível.
+- As caixas padrão são cadastradas automaticamente ao iniciar a aplicação.
+- O empacotamento utiliza um algoritmo First Fit Decreasing simplificado: os produtos são agrupados na menor quantidade de caixas possível, respeitando as dimensões.
 - O código está pronto para evoluir com autenticação, testes e melhorias na lógica de empacotamento.
 
 ---
